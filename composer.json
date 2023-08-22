@@ -1,0 +1,15 @@
+{
+    "description": "Projeto Celke",
+    "authors": [
+        {
+            "name": "Cesar",
+            "email": "cesar@celke.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core"
+        }
+    },
+    "require": {}
+}
