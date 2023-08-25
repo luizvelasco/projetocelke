@@ -7,13 +7,12 @@ class ConfigController
     private string $url;
     private array $urlArray;
     private string $urlController;
-    private string $urlParameter;
+    // private string $urlParameter;
     private string $urlSlugController;
     private array $format;
 
     public function __construct()
     {
-        echo "Carregar a página<hr>";
         if (!empty(filter_input(INPUT_GET, 'url', FILTER_DEFAULT))){
             $this->url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
 
@@ -24,11 +23,10 @@ class ConfigController
             if (isset($this->urlArray[0])){
                 $this->urlController = $this->slugController($this->urlArray[0]);
             } else {
-                $this->urlController = "Home";
+                $this->urlController = $this->slugController("home");
             }
         } else {
-            echo "Acessa a página inicial"; 
-            $this->urlController = "Home";
+            $this->urlController = $this->slugController("home");
         }
 
         echo "Controller: {$this->urlController}<br>";
@@ -61,6 +59,13 @@ class ConfigController
         $this->urlSlugController = str_replace(" ", "", $this->urlSlugController);
 
         return $this->urlSlugController;
+    }
+
+    public function loadPg()
+    {
+        $classLoad = "\\Sts\\Controllers\\" . $this->urlController;
+        $classPage = new $classLoad();
+        $classPage->index();
     }
     
 }
