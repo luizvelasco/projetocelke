@@ -24,10 +24,10 @@ class ConfigController extends Config
             if (isset($this->urlArray[0])){
                 $this->urlController = $this->slugController($this->urlArray[0]);
             } else {
-                $this->urlController = $this->slugController(CONTROLLER);
+                $this->urlController = $this->slugController(CONTROLLERERRO);
             }
         } else {
-            $this->urlController = $this->slugController(CONTROLLERERRO);
+            $this->urlController = $this->slugController(CONTROLLER);
         }
 
         echo "Controller: {$this->urlController}<br>";

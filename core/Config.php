@@ -14,5 +14,7 @@ abstract class Config
         define('CONTROLLERERRO', 'Erro');
 
         // Credenciais do banco de dados
+
+        define('EMAILADM', 'luizvelasco@gmail.com');
     }
 }
