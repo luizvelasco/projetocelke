@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class ConfigController
+class ConfigController extends Config
 {
     private string $url;
     private array $urlArray;
@@ -13,6 +13,7 @@ class ConfigController
 
     public function __construct()
     {
+        $this->config();
         if (!empty(filter_input(INPUT_GET, 'url', FILTER_DEFAULT))){
             $this->url = filter_input(INPUT_GET, 'url', FILTER_DEFAULT);
 
@@ -23,10 +24,10 @@ class ConfigController
             if (isset($this->urlArray[0])){
                 $this->urlController = $this->slugController($this->urlArray[0]);
             } else {
-                $this->urlController = $this->slugController("home");
+                $this->urlController = $this->slugController(CONTROLLER);
             }
         } else {
-            $this->urlController = $this->slugController("home");
+            $this->urlController = $this->slugController(CONTROLLERERRO);
         }
 
         echo "Controller: {$this->urlController}<br>";
