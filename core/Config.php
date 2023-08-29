@@ -19,6 +19,11 @@ abstract class Config
         define('CONTROLLERERRO', 'Erro');
 
         // Credenciais do banco de dados
+        define('HOST', 'localhost');
+        define('USER', 'root');
+        define('PASS', '');
+        define('DBNAME', 'celke');
+        define('PORT', '3306');
 
         define('EMAILADM', 'luizvelasco@gmail.com');
     }
