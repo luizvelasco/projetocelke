@@ -23,15 +23,20 @@ class StsHome
      */
     public function index(): array 
     {
-        $this->data = [
-            "title" => "Topo da página",
-            "description" => "Descição do serviço"
-        ];
+        // $this->data = [
+        //     "title" => "Topo da página",
+        //     "description" => "Descição do serviço"
+        // ];
 
         $connection = new \Sts\Models\helper\StsConn();
         $this->connection = $connection->connectDb();
 
-        var_dump($this->connection);
+        $query_home_top = "SELECT id, title_top, description_top, link_btn_top, txt_btn_top, image FROM sts_homes_tops";
+        $result_home_top = $this->connection->prepare($query_home_top);
+        $result_home_top->execute();
+        $this->data = $result_home_top->fetch();
+
+        // var_dump($this->data);
 
         return $this->data;
     }

@@ -6,6 +6,13 @@ if(!defined('C7E3L8K9E5')){
     die("Erro: Página não encontrada!");
 }
 
-echo "View da página home<br>";
+echo "<h1>Página Inicial</h1>";
 
-var_dump($this->data);
+extract($this->data);
+
+echo "ID: $id<br>";
+echo "Título: $title_top<br>";
+echo "Descrição: $description_top<br>";
+echo "Link do Botão: $link_btn_top<br>";
+echo "Texto do Botão: $txt_btn_top<br>";
+echo "Nome da imagem: $image<br>";
