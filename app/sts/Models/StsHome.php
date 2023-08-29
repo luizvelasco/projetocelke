@@ -29,9 +29,9 @@ class StsHome
         ];
 
         $connection = new \Sts\Models\helper\StsConn();
-        $this->$connection = $connection->connectDb();
+        $this->connection = $connection->connectDb();
 
-        var_dump($this->$connection);
+        var_dump($this->connection);
 
         return $this->data;
     }
