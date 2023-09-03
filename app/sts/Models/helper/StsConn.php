@@ -11,7 +11,7 @@ if(!defined('C7E3L8K9E5')){
     die("Erro: Página não encontrada!");
 }
 
-class StsConn
+abstract class StsConn
 {
     private string $host = HOST;
     private string $user = USER;

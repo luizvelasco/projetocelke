@@ -8,7 +8,7 @@ if(!defined('C7E3L8K9E5')){
 
 echo "<h1>Página Inicial</h1>";
 
-extract($this->data);
+extract($this->data[0]);
 
 echo "ID: $id<br>";
 echo "Título: $title_top<br>";
